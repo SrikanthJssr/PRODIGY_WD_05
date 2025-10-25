@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Real-time weather application by Srikanth Borkar - Get current weather information for any city worldwide">
+    <meta name="author" content="Srikanth Borkar">
+    <title>Weather App | Srikanth Borkar</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- CSS File -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Theme Toggle Button -->
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light mode">
+        <i class="fas fa-moon"></i>
+    </button>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">
+                <i class="fas fa-cloud-sun"></i>
+                <h1>Weather<span>Now</span></h1>
+            </div>
+            <p class="subtitle">Real-time weather information at your fingertips</p>
+        </header>
+
+        <!-- Search Section -->
+        <div class="search-box">
+            <div class="search-container">
+                <input 
+                    type="text" 
+                    id="cityInput" 
+                    placeholder="Enter city name..." 
+                    aria-label="City name input"
+                >
+                <button id="searchBtn" class="search-btn" aria-label="Search weather">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+            <button id="locationBtn" class="location-btn" aria-label="Get current location weather">
+                <i class="fas fa-location-crosshairs"></i>
+                Use My Location
+            </button>
+        </div>
+
+        <!-- Loading Spinner -->
+        <div class="loader" id="loader">
+            <div class="spinner"></div>
+            <p>Fetching weather data...</p>
+        </div>
+
+        <!-- Error Message -->
+        <div class="error-message" id="errorMessage">
+            <i class="fas fa-exclamation-circle"></i>
+            <p id="errorText"></p>
+        </div>
+
+        <!-- Weather Card -->
+        <div class="weather-card" id="weatherCard">
+            <!-- Location Info -->
+            <div class="location-info">
+                <i class="fas fa-map-marker-alt"></i>
+                <h2 id="cityName">City Name</h2>
+                <p id="country">Country</p>
+            </div>
+
+            <!-- Weather Icon and Temperature -->
+            <div class="weather-main">
+                <img id="weatherIcon" src="" alt="Weather icon">
+                <div class="temperature">
+                    <h1 id="temp">--</h1>
+                    <span class="unit">°C</span>
+                </div>
+                <p id="weatherDescription">Weather Description</p>
+            </div>
+
+            <!-- Weather Details -->
+            <div class="weather-details">
+                <div class="detail-item">
+                    <i class="fas fa-temperature-high"></i>
+                    <div class="detail-info">
+                        <p class="detail-label">Feels Like</p>
+                        <p class="detail-value" id="feelsLike">--°C</p>
+                    </div>
+                </div>
+                <div class="detail-item">
+                    <i class="fas fa-droplet"></i>
+                    <div class="detail-info">
+                        <p class="detail-label">Humidity</p>
+                        <p class="detail-value" id="humidity">--%</p>
+                    </div>
+                </div>
+                <div class="detail-item">
+                    <i class="fas fa-wind"></i>
+                    <div class="detail-info">
+                        <p class="detail-label">Wind Speed</p>
+                        <p class="detail-value" id="windSpeed">-- km/h</p>
+                    </div>
+                </div>
+                <div class="detail-item">
+                    <i class="fas fa-gauge-high"></i>
+                    <div class="detail-info">
+                        <p class="detail-label">Pressure</p>
+                        <p class="detail-value" id="pressure">-- hPa</p>
+                    </div>
+                </div>
+                <div class="detail-item">
+                    <i class="fas fa-eye"></i>
+                    <div class="detail-info">
+                        <p class="detail-label">Visibility</p>
+                        <p class="detail-value" id="visibility">-- km</p>
+                    </div>
+                </div>
+                <div class="detail-item">
+                    <i class="fas fa-compass"></i>
+                    <div class="detail-info">
+                        <p class="detail-label">Wind Direction</p>
+                        <p class="detail-value" id="windDirection">--</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Additional Info -->
+            <div class="additional-info">
+                <div class="info-card">
+                    <i class="fas fa-sunrise"></i>
+                    <p>Sunrise</p>
+                    <span id="sunrise">--:--</span>
+                </div>
+                <div class="info-card">
+                    <i class="fas fa-sunset"></i>
+                    <p>Sunset</p>
+                    <span id="sunset">--:--</span>
+                </div>
+            </div>
+
+            <!-- Last Updated -->
+            <div class="last-updated">
+                <i class="fas fa-clock"></i>
+                <span id="lastUpdated">Last updated: --</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>Developed by <strong>Srikanth Borkar</strong> | <span class="task-name">PRODIGY_WD_05</span></p>
+        <p class="footer-subtitle">Full Stack Web Development Internship - Prodigy InfoTech</p>
+    </footer>
+
+    <!-- JavaScript File -->
+    <script src="script.js"></script>
+</body>
+</html>
